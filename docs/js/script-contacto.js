@@ -1,7 +1,10 @@
 
 window.addEventListener('DOMContentLoaded', (e) => {
+    
     console.log("evento DOMContentLoaded");
+    
     let boton = document.getElementById("btn-suscribir")
+   
     boton.addEventListener("click", (ev) => {
         try {
         let nombre = document.getElementById("nombre").value;
@@ -34,7 +37,7 @@ async function guardarSuscriptor( suscriptor ) {
         body: JSON.stringify(suscriptor)
     });
     const data = await respuesta.json();
-    mostrarExito("Se guardo correctamente su sucripción") 
+    mostrarExito("Se guardo correctamente su suscripción") 
 }
 
 function getCategorias() {
@@ -43,13 +46,9 @@ function getCategorias() {
     
     for(let i = 0; i < inputCategorias.length; i++ ) {
         const categorias = inputCategorias[i].value;
-        arrCategorias.push(interes);
+        arrCategorias.push(categorias);
     }
 
-    if( inputIntereses.length < 1 ) {
-        mostrarError("Debe seleccionar al menos 1 tema de su interés!!!");
-        return false;
-    }
     return arrCategorias;
     
 }
@@ -58,7 +57,6 @@ function getIntereses() {
     let inputIntereses = document.querySelectorAll("input[name='intereses']:checked")
     let arrIntereses   = [];
 
-    //inputIntereses.forEach( nodoInteres => arrIntereses.push(nodoInteres.value) );
     for(let i = 0; i < inputIntereses.length; i++ ) {
         const interes = inputIntereses[i].value;
         arrIntereses.push(interes);
@@ -68,6 +66,7 @@ function getIntereses() {
         mostrarError("Debe seleccionar al menos 1 tema de su interés!!!");
         return false;
     }
+
     return arrIntereses;
     
 }
@@ -75,15 +74,13 @@ function getIntereses() {
 function getGenero() {
     let inputSeleccionado= document.querySelector("input[name='genero']:checked")
     if ( inputSeleccionado == null ) {
-        //mostrarError("Debe seleccionar un género!!");
         throw new Error("Debe seleccionar un género!!!");
-        //return false
     }
     const genero = inputSeleccionado.value;
     return genero;
 }
 
-const errores = [] // array vacío 
+const errores = [] 
 const nombre = getNombreDesdeForm();
 const edad = getEdadDesdeForm();
 
@@ -107,6 +104,7 @@ function mostrarExito(mensaje) {
     li.appendChild(liText);
     ul.appendChild(li);
 }
+
 function mostrarError(mensajeDeError) {
     //console.error(mensajeDeError);
     document.getElementById("form-mensaje-error").style.display = "block";
