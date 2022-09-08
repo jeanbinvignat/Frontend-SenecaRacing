@@ -80,22 +80,6 @@ function getGenero() {
     return genero;
 }
 
-const errores = [] 
-const nombre = getNombreDesdeForm();
-const edad = getEdadDesdeForm();
-
-if( !nombreEsValido(nombre)) {
-    errores[0] = "El nombre no es válido";
-} if( edad < 18) {
-    errores[1] = "Debe ser mayor de edad";
-}
-
-if( errores.length > 0) {
-    mostrarErrores(errores);
-} else {
-    guardarDatos(); 
-}
-
 function mostrarExito(mensaje) {
     document.getElementById("form-mensaje-exitoso").style.display = "block";
     const ul = document.querySelector("#form-mensaje-exitoso ul");
