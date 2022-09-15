@@ -1,3 +1,33 @@
+img.navbar-brand {
+    margin: 2px 20px;
+    margin-left: 10px;
+    width: 9%;
+    height: 6%;
+    border: 0px solid;
+}
+
+a{
+    color:rgb(216, 193, 117);
+}
+
+.nav-link {
+    color: white !important;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+#inicio {
+    color: rgb(226, 213, 93) !important;
+    font-family: 'Michroma', sans-serif;
+    padding: 8px;
+    margin-bottom: 0px;
+    margin-right: 20px;
+    margin-left: 10px;
+    font-size: 18px;
+    background-color: rgb(38, 175, 175);
+}
+
 header {
     background-color: rgb(38, 41, 196);
     color: white;
@@ -53,9 +83,25 @@ form {
     text-align: justify;
     margin: 40px 30px;
     margin-left: 450px;
+    margin-right: 450px;
     padding: 20px 30px;
     font-family: 'Poppins', sans-serif;
     font-size: 25px;
+}
+
+#instrucciones {
+    font-size: 18px;
+    background-color: rgba(240, 207, 98, 0.384);
+    border: solid white;
+}
+
+#encuesta {
+    font-size: 24px;
+}
+
+button {
+    padding: 5px 20px;
+    margin-top: 20px;
 }
 
 div#galeria {
@@ -63,11 +109,23 @@ div#galeria {
     text-align: center;
     border: 3px solid;
     padding: 20px 20px;
-    background-color: rgba(216, 88, 49, 0.26);
+    background-color: rgba(216, 163, 49, 0.26);
     
 }
+
 label {
     margin: 12px;
+}
+
+input#correo {
+    font-size: 16px;
+    width: 50%;
+    padding: 10px;
+}
+
+textarea {
+    font-size: 15px;
+    width: 75%;
 }
 
 input#masculino {
@@ -76,6 +134,11 @@ input#masculino {
 }
 
 button#btn-suscribir {
+    margin: 30px 0px;
+    text-align: center;
+}
+
+button#btn-enviarform {
     margin: 30px 0px;
     text-align: center;
 }
@@ -90,7 +153,14 @@ img {
     padding: 0px 0px;
 }
 
+#flex-tabla {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 table {
+    width: 700px;
     border: 3px solid;
     background-color: rgb(35, 117, 117);
 }
@@ -102,30 +172,83 @@ tr {
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
     border-bottom: 3px solid;
-    border-collapse: collapse;
     border-color: aliceblue;
-    
 }
 
 th {
     width: 100px;
-    text-align: justify;
-    padding: 0px 0px;
+    text-align: center;
+    padding: 0px 10px;
 }
 
 td {
-    width: 100%;
-    text-align: justify;
-    padding: 0px 0px;
+    text-align: center;
+    padding: 0px 10px;
 }
+
+#flex-informacion h4 {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
+    margin: 2px 250px;
+}
+
+#flex-informacion ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+#flex-informacion p {
+    display: flex;
+    margin: 30px 400px;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+} 
+
+#flex-img {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    border: 0px solid !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#flex-img-1 {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    border: 0px solid !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex
+} 
+
 footer {
     background-color: rgb(172, 25, 25);
     color: white;
     text-align: center;
     font-family: 'Saira', sans-serif;
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 20px;
+    padding: 10px 20px 20px 20px;
     margin: 10px 0px;
+    margin-bottom: 0px;
+}
+
+.nav-link:hover , #inicio:hover {
+    color: rgb(70, 70, 70) !important;
+    font-size: 20px;
+    transition: all linear 100ms;
+}
+
+button:hover {
+    transform: scale(1.05);
+    color: rgb(184, 165, 104);
+    transition: all linear 100ms;
 }
 
 @media (max-width: 1200px) {
@@ -137,10 +260,38 @@ footer {
     form {
         margin-left: 90px;
     }
+
+    img.navbar-brand {
+        width: 20%;
+        border: 0px solid;
+    }
+
+    #flex-informacion p {
+        display: flex;
+        margin: 30px 100px;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 30px;
+    } 
+
+    form {
+        text-align: justify;
+        margin: 40px 30px;
+        margin-left: 100px;
+        margin-right: 100px;
+        padding: 20px 30px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 800px) {
 	body {
 		width:100%;
 	}
+
+    img.navbar-brand {
+        width: 10%;
+        border: 0px solid;
+    }
 }

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
     <head>
         <meta charset="utf-8"/>
-        <title>Contacto-Seneca</title>
+        <title>Evalúanos-Seneca</title>
         <link rel="shortcut icon" href="https://assets.squarespace.com/universal/default-favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <link rel="stylesheet" href="css/estilos.css" />
-        <script src="js/script-contacto.js"></script>
+        <script src="js/script-evaluacion.js"></script>
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +49,7 @@
             </nav>
         </header>
         <main>
-            <h1>Datos de contacto</h1>
+            <h1>Encuesta de Satisfacción</h1>
             <section>
 
                 <div id="form-mensaje-exitoso" class="alert alert-success" role="alert" style="display:none">
@@ -62,38 +61,73 @@
                 </div>
             
                 <form name="form" action="#" method="get">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" title="Escriba su nombre completo" required/>
+                    <label for="correo">Correo Electrónico: </label>
                     <br />
-                    <label for="correo">Correo Electrónico</label>
                     <input type="email" id="correo" name="correo" title="Escriba su dirección de correo electrónico" required/>
                     <br />
-                    <label for="categorias">Categorias</label>
-                    <select name="categorias" id="categorias" title="Escoja de cual/es categorías se le será notificada">
-                        <option value="0" >Touring</option>
-                        <option value="1" >Grand Touring</option>
-                        <option value="2" >Open Wheel</option>
-                        <option value="3" >Track Days</option>
-                        <option value="4" >Classics</option>
-                    </select>
-                    <br >
-                    <input type="radio" id="masculino" name="genero" value="M" />
-                    <label for="masculino">Masculino</label>
-                    <input type="radio" id="femenino" name="genero" value="F" />
-                    <label for="femenino">Femenino</label>
                     <br />
-                    Intereses:<br />
-                    <input type="checkbox" value="Eventos Calendario" id="calendario" name="intereses" />
-                    <label for="calendario">Eventos de Calendario</label>
+                    <div id="instrucciones">
+                        <label id="explicacion">Para responder a cada pregunta escoja entre estas puntuaciones:</label>
+                        <br />
+                        <label id="punto">1: Muy deficiente</label>
+                        <br />
+                        <label id="punto">2: Deficiente</label>
+                        <br />
+                        <label id="punto">3: Decente</label>
+                        <br />
+                        <label id="punto">4: Bueno</label>
+                        <br />
+                        <label id="punto">5: Muy Bueno</label>
+                    </div>
                     <br />
-                    <input type="checkbox" value="Actividades Equipo" id="actividades" name="intereses" />
-                    <label for="actividades">Actividades de Equipo</label>
                     <br />
-                    <input type="checkbox" value=">Videos Nuevos" id="videos" name="intereses" />
-                    <label for="videos">Videos Nuevos</label>
+                    <div id="encuesta">
+                        <label for="aspecto">¿Como calificaría el diseño de este proyecto?</label>
+                        <br />
+                        <input type="radio" id="opcion1" name="aspecto" value="1" />
+                        <label for="respuesta-1">1</label>
+                        <input type="radio" id="opcion2" name="aspecto" value="2" />
+                        <label for="respuesta-2">2</label>
+                        <input type="radio" id="opcion3" name="aspecto" value="3" />
+                        <label for="respuesta-3">3</label>
+                        <input type="radio" id="opcion4" name="aspecto" value="4" />
+                        <label for="respuesta-4">4</label>
+                        <input type="radio" id="opcion5" name="aspecto" value="5" />
+                        <label for="respuesta-5">5</label>
+                        <br />
+                        <label for="aspecto">¿Como evaluaría la organización del proyecto?</label>
+                        <br />
+                        <input type="radio" id="opcion1" name="orden" value="1" />
+                        <label for="respuesta-1">1</label>
+                        <input type="radio" id="opcion2" name="orden" value="2" />
+                        <label for="respuesta-2">2</label>
+                        <input type="radio" id="opcion3" name="orden" value="3" />
+                        <label for="respuesta-3">3</label>
+                        <input type="radio" id="opcion4" name="orden" value="4" />
+                        <label for="respuesta-4">4</label>
+                        <input type="radio" id="opcion5" name="orden" value="5" />
+                        <label for="respuesta-5">5</label>
+                        <br />
+                        <label for="aspecto">¿Que calificación le daría a la responsividad del proyecto?</label>
+                        <br />
+                        <input type="radio" id="opcion1" name="responsividad" value="1" />
+                        <label for="respuesta-1">1</label>
+                        <input type="radio" id="opcion2" name="responsividad" value="2" />
+                        <label for="respuesta-2">2</label>
+                        <input type="radio" id="opcion3" name="responsividad" value="3" />
+                        <label for="respuesta-3">3</label>
+                        <input type="radio" id="opcion4" name="responsividad" value="4" />
+                        <label for="respuesta-4">4</label>
+                        <input type="radio" id="opcion5" name="responsividad" value="5" />
+                        <label for="respuesta-5">5</label>
+                    </div>
                     <br />
-                    <button id="btn-suscribir" type="button">Suscribir</button>
-                
+                    <br />
+                    <label for="comentarios">Comentarios adicionales: </label>
+                    <br />
+                    <textarea id="comentarios" rows="10" cols="50" title="Agregue comentarios en caso de que desee hacerlo"></textarea>
+                    <br />
+                    <button id="btn-enviarform" type="button">Enviar respuesta</button>
                 </form>
             </section>
         </main>
